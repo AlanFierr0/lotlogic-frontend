@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar dueño</title>
+    <style>
+        #nombre, #DNI, #contraseña, #confirmacion {
+            display: inline-block;
+        }
+
+        #nombre {
+            text-align: left;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        #DNI {
+            text-align: left;;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        #contraseña {
+            text-align: left;;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        #confirmacion {
+            text-align: left;;
+            width: 250px;
+            margin-right: 10px;
+        }
+
+        input {
+            vertical-align: middle;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(199, 199, 180, 0.568);
+        }
+    </style>
+    <script>
+        function myFunction() {
+            fetch('http://localhost:8080/api/user/add', {
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                method: "post",
+                body: {
+                    "dni": "43908621",
+                    "firstName": "Nicolas",
+                    "lastName": "Mangini",
+                    "password": "1234567"
+                },
+                mode: "no-cors"
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Error al agregar usuario');
+                    }
+                    alert('Usuario agregado correctamente');
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+        }
+    </script>
+
+</head>
+<body>
+<h1> Agregar Dueño </h1>
+
+<br><br>
+<h3> Agregar un nuevo usuario de dueño al sistema</h3>
+<br><br>
+
+
+<h3>Nombre y Apellido:</h3>
+<input id="nombre" type="text">
+
+<br><br>
+
+<h3>DNI:</h3>
+<input name="DNI" id="DNI" type="text">
+
+<br><br>
+
+<h3>Contraseña:</h3>
+<input id="contraseña" type="password">
+
+<br><br>
+
+<h3>Confirmar Contraseña:</h3>
+<input id="confirmacion" type="password">
+
+<br></br>
+
+<button type="submit" onclick="myFunction()">Dar de Alta usuario dueño</button>
+</body>
+</html>
