@@ -3,6 +3,8 @@ function modifyOwner() {
     const lastName = document.getElementById('input_lastname').value;
     const dni = document.getElementById('input_dni').value;
     const password = document.getElementById('input_password').value;
+    //hay que agarrar el userId de manera automatica al seleccionarlo de la lista
+    const userId = document.getElementById('input_userid');
 
     const userEditForm = {
         dni: dni,
@@ -11,7 +13,8 @@ function modifyOwner() {
         password: password
     };
 
-    fetch(('http://localhost:8080/api/user/update-owner-byDNI/' + dni), {
+    //TODO userId concat in fetch
+    fetch(('http://localhost:8080/api/user/update-owner/{userId}'), {
         headers: {
             "Content-Type": "application/json"
         },
@@ -20,9 +23,9 @@ function modifyOwner() {
     })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Error al modificar empleado');
+                throw new Error('Error al modificar dueño');
             }
-            alert('Empleado modificado correctamente');
+            alert('Dueño modificado correctamente');
         })
         .catch(error => {
             alert(error.message);
@@ -34,6 +37,8 @@ function modifyEmployee() {
     const lastName = document.getElementById('input_lastname').value;
     const dni = document.getElementById('input_dni').value;
     const pin = document.getElementById('input_pin').value;
+    //hay que agarrar el userId de manera automatica al seleccionarlo de la lista
+    const userId = document.getElementById('input_userid');
 
     const userEditForm = {
         dni: dni,
@@ -42,7 +47,8 @@ function modifyEmployee() {
         password: pin
     };
 
-    fetch(('http://localhost:8080/api/user/update-employee-byDNI/' + dni), {
+    //TODO userId concat in fetch
+    fetch(('http://localhost:8080/api/user/update-employee/{userId}'), {
         headers: {
             "Content-Type": "application/json"
         },

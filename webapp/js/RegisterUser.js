@@ -1,19 +1,19 @@
 function registerOwner() {
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const dni = document.getElementById('DNI').value;
-    const password = document.getElementById('contraseña').value;
-    const confirmacionPassword = document.getElementById('confirmacion').value;
+    const name = document.getElementById('input_name').value;
+    const lastName = document.getElementById('input_lastname').value;
+    const dni = document.getElementById('input_dni').value;
+    const password = document.getElementById('input_password').value;
+    const confirmationPassword = document.getElementById('input_confirmationpassword').value;
 
-    if (password !== confirmacionPassword) {
+    if (password !== confirmationPassword) {
         alert('Las contraseñas no coinciden');
         return;
     }
 
     const nuevoUsuario = {
         dni: dni,
-        firstName: nombre,
-        lastName: apellido,
+        firstName: name,
+        lastName: lastName,
         password: password
     };
 
@@ -26,32 +26,32 @@ function registerOwner() {
     })
         .then(response => {
             if (!response.ok) {
-                throw new Error('Error al agregar dueno');
+                throw new Error('Error al agregar dueño');
             }
-            alert('Dueno agregado correctamente');
+            alert('Dueño agregado correctamente');
         })
         .catch(error => {
             alert(error.message);
         });
-} 
+}
 
 function registerEmployee() {
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const dni = document.getElementById('DNI').value;
-    const password = document.getElementById('contraseña').value;
-    const confirmacionPassword = document.getElementById('confirmacion').value;
+    const name = document.getElementById('input_name').value;
+    const lastName = document.getElementById('input_lastname').value;
+    const dni = document.getElementById('input_dni').value;
+    const pin = document.getElementById('input_pin').value;
+    const confirmationPin = document.getElementById('input_confirmationpin').value;
 
-    if (password !== confirmacionPassword) {
-        alert('Las contraseñas no coinciden');
+    if (pin !== confirmationPin) {
+        alert('Los pines no coinciden');
         return;
     }
 
     const nuevoUsuario = {
         dni: dni,
-        firstName: nombre,
-        lastName: apellido,
-        password: password
+        firstName: name,
+        lastName: lastName,
+        password: pin
     };
 
     fetch('http://localhost:8080/api/user/add-employee', {
