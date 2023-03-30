@@ -3,8 +3,7 @@ function modifyOwner() {
     const lastName = document.getElementById('input_lastname').value;
     const dni = document.getElementById('input_dni').value;
     const password = document.getElementById('input_password').value;
-    //hay que agarrar el userId de manera automatica al seleccionarlo de la lista
-    const userId = document.getElementById('input_userid');
+    const userId = document.getElementById('input_userid').value;
 
     const userEditForm = {
         dni: dni,
@@ -13,8 +12,7 @@ function modifyOwner() {
         password: password
     };
 
-    //TODO userId concat in fetch
-    fetch(('http://localhost:8080/api/user/update-owner/{userId}'), {
+    fetch((`http://localhost:8080/api/user/update-owner/${userId}`), {
         headers: {
             "Content-Type": "application/json"
         },
@@ -37,8 +35,7 @@ function modifyEmployee() {
     const lastName = document.getElementById('input_lastname').value;
     const dni = document.getElementById('input_dni').value;
     const pin = document.getElementById('input_pin').value;
-    //hay que agarrar el userId de manera automatica al seleccionarlo de la lista
-    const userId = document.getElementById('input_userid');
+    const userId = document.getElementById('input_userid').value;
 
     const userEditForm = {
         dni: dni,
@@ -47,8 +44,7 @@ function modifyEmployee() {
         password: pin
     };
 
-    //TODO userId concat in fetch
-    fetch(('http://localhost:8080/api/user/update-employee/{userId}'), {
+    fetch((`http://localhost:8080/api/user/update-employee/${userId}`), {
         headers: {
             "Content-Type": "application/json"
         },
@@ -64,4 +60,7 @@ function modifyEmployee() {
         .catch(error => {
             alert(error.message);
         });
+
+
+        
 }
