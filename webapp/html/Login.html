@@ -5,33 +5,30 @@
     <title>Iniciar Sesión</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script type="" src="../js/LogInUser.js"></script>
 </head>
 <body>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <div class="container" style="max-width: 500px;">
-        <form method="post">
+    <div class="container vh-100 d-flex align-items-center justify-content-center" style="max-width: 500px;">
+        <form onsubmit="logIn(event)">
             <div class="text-center pb-3">
                 <div class="pb-3">
                     <h1>LotLogic</h1>
                 </div>
-                <img src="../images/login.png" alt="login" width="200px" />
+                <img src="../images/login.png" alt="login logo" width="80px" />
             </div>
 
             <div class="form-group pb-3">
                 <label>Usuario</label>
-                <input type="text" class="form-control" id="input_user" name="input_user">
+                <input type="text" class="form-control" id="dni" name="input_user">
             </div>
 
             <div class="form-group pb-3">
                 <label>Contraseña</label>
-                <input type="password" class="form-control" id="input_password" name="input_password">
+                <input type="password" class="form-control" id="password" name="input_password">
             </div>
 
             <div class="text-center pb-3">
-                <button type="submit" class="btn btn-dark" onclick="">Login</button>
+                <button type="submit" class="btn btn-dark">Login</button>
             </div>
         </form>
     </div>
