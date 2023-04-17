@@ -1,0 +1,57 @@
+
+a{
+    text-decoration: none;
+    color:#eee;
+
+
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    border: 1px solid black;
+    height: 95vh;
+
+    
+    
+}
+
+.wrapper .button {
+
+    border-bottom:1px solid black;
+    background-color: #25b412;
+    padding: 8px 16px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    height: 10%;
+}
+.izq {
+    display:flex;
+    flex-direction: column;
+    padding: 0px;
+    border-right: 1px solid black;
+
+    
+}
+
+.section {
+    text-align: center;
+    background-color: #ffb7b7;
+    padding: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.account{
+    height: 30px;
+    padding: 25px;
+    border-bottom: 1px solid black;
+}
+a,.section {
+    font-size:xx-large ;
+}
+
+
+
+
